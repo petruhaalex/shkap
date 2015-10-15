@@ -1,0 +1,12 @@
+/*--------------------------------add fonts--------------------------------*/
+
+@font-face {
+    font-family: 'Verveine';
+    src: url('../fonts/VerveineCorp.eot');
+    src: url('../fonts/VerveineCorp.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/VerveineCorp.woff') format('woff'),
+    url('../fonts/VerveineCorp.ttf') format('truetype'),
+    url('../fonts/VerveineCorp.svg#Sri-TSCRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

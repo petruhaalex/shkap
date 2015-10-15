@@ -1,0 +1,89 @@
+/*--------------------------------hovers CSS--------------------------------*/
+
+.sidebar_menu>li a:hover {font-weight: 500}
+#owl-demo.owl-theme .owl-controls .owl-page:hover span {background-color: #7c8fff}
+#owl-demo.owl-theme .owl-controls .owl-page.active:hover span {background-color: transparent}
+.likes>ul li:hover .book-container,
+.popular li:hover .book-container,
+.oneSection ul li:hover .book-container {border-color: #aebbf1;}
+.classicButton:hover {background-color: #7c8fff}
+.classicButton.onWhite:hover {background-color: #7c8fff; border-color: #7c8fff; color: #fff}
+.book-container .classicButton:hover {color: #fff; border-color: #7c8fff}
+.blog-image a:hover span[class*=cb_] img:first-child,
+.inBlog > ul li a:hover span[class*=cb_] img:first-child {opacity: 0}
+.blog-image a:hover .info .bg-box-container,
+.inBlog > ul li a:hover .info .bg-box-container {opacity: 1}
+.blog-image a:hover .info time,
+.blog-image a:hover .info strong,
+.inBlog>ul li a:hover .info time {color: #ffdb46}
+.blog-image a:hover .info .bg-box-head .withmarkers .markers span {background-color: #ffdb46; color: #000}
+.blog-image a:hover .info span,
+.inBlog>ul li a:hover .info span {color: #fff}
+.blog-image a:hover .info .colorBG {background-color: rgba(7,23,124,0.6);}
+.toolbar form button[type=submit]:hover .rabbit span {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+}
+#main_menu > ul li a:hover {color: #7c8fff}
+.registr a:hover {color: #7c8fff}
+.basket a:hover {color: #7c8fff}
+.attached .breadcrumbs a:hover {color: #7c8fff}
+.toolbar > div.basket a:hover > span span {color: #fff}
+.toolbar > div.basket a:hover > span .svg-in {fill: #7c8fff}
+#owl-demo.owl-theme .owl-controls .owl-buttons div:hover:after,
+.fred-buttons div:hover:after,
+.pika-imgnav a:hover:after {background-color: #7c8fff}
+.library>section.head>a:hover svg .lib-book {fill:#7c8fff}
+.pagination a:hover span {color: #2a3fbe}
+.footer_tools nav li a:hover {color: #2a3fbe}
+.footer_tools .socials ul li a:hover svg.svg-out {fill: #2a3fbe}
+.footer_tools .socials ul li a:hover svg:last-child {fill: #2a3fbe}
+a.sectionTitle:hover {color: #2a3fbe}
+a.sectionTitle:hover svg {fill: #2a3fbe}
+.toolbar>div.language .sbOptions a:hover,
+.select-field .sbOptions li a:hover {background-color: rgba(0,0,0,0.1)}
+#register .register-box form .reg-options a:hover {color: #2a3fbe}
+.pagination a.p-left:hover svg, .pagination a.p-right:hover svg {fill: #000}
+.allElements:hover,
+.forwardEl:hover,
+.backdEl:hover {color: #fff; background-color: #7c8fff; border-color: #7c8fff}
+.allElements:hover:after,
+.forwardEl:hover:after,
+.backdEl:hover:after {opacity: 0}
+.allElements:hover:before,
+.forwardEl:hover:before,
+.backdEl:hover:before {opacity: 1}
+a.blog-head:hover {color: #7c8fff}
+.bs_pic:hover .img-box .colorBG {opacity: 1}
+.bs_archive li a:hover {font-weight: 500}
+.toAuth ul li a:hover svg.svg-out {fill: #aebbf1}
+/*#footer .diz > a:hover span, #footer .diz > a:hover svg {color: #7c8fff; fill: #7c8fff}*/
+.commentAuth li a:hover svg {fill: #2a3fbe}
+.commentAuth li a:hover svg.svg-in {fill: #fff}
+.commentAuth li a:hover svg.svg-out {fill:#2a3fbe}
+.helplist li a:hover {color: #2a3fbe}
+.contactBox ul li a:hover span {color: #2a3fbe}
+.contactBox ul li a:hover svg {fill:#fff}
+.contactBox ul li a:hover svg.svg-in {fill:#2a3fbe}
+.contactBox ul li a:hover svg.svg-out {fill:#2a3fbe}
+.sort .customSort span:hover {
+    border-color: #7c8fff;
+    color: #fff;
+    background-color: #7c8fff;
+}
+.sort .customSort span:hover:after {opacity: 0}
+.sort .customSort span:hover:before {opacity: 1}
+#register .register-box form .reg-options ul li a:hover svg {fill:#fff}
+#register .register-box form .reg-options ul li a:hover svg.svg-in,
+#register .register-box form .reg-options ul li a:hover svg.svg-out {fill:#7c8fff}
+.productAbout .share li a:hover svg {fill:#fff}
+.productAbout .share li a:hover svg.svg-in,
+.productAbout .share li a:hover svg.svg-out {fill:#aebbf1}
+.pageBack:hover, .updownletter:hover {
+    background-color: #2a3fbe;
+    border-color: #2a3fbe;
+}
+.pageBack:hover svg, .updownletter:hover svg {fill:#fff}

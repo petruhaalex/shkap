@@ -9,6 +9,18 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 */
+/*--------------------------------add fonts--------------------------------*/
+
+@font-face {
+    font-family: 'Verveine';
+    src: url('fonts/VerveineCorp.eot');
+    src: url('fonts/VerveineCorp.eot?#iefix') format('embedded-opentype'),
+    url('fonts/VerveineCorp.woff') format('woff'),
+    url('fonts/VerveineCorp.ttf') format('truetype'),
+    url('fonts/VerveineCorp.svg#Sri-TSCRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 
 /*--------------------------------reset CSS--------------------------------*/
 
@@ -72,6 +84,7 @@ body, input, button, textarea {
     color: #181818;
 }
 #wrapper {position: relative}
+#wrapper.fairyPage {background-color: #7c8fff}
 #wrapper .bgLeft,
 #wrapper .bgRight {position: absolute; top: 0; bottom: 0; z-index: 1}
 #wrapper .bgLeft {left: 0; right: 50%; background-color: #fcf6ef}
@@ -85,6 +98,8 @@ body, input, button, textarea {
     position: absolute;
     z-index: 0
 }
+#wrapper.fairyPage .bgTop {background-color: #fff; height: 190px}
+#wrapper .bgTop.fr {height: 190px; background-color: #fff}
 .bgTop.custom-border span.cb_bottom {left: 0; right: 0}
 .responsive-container {
     /*min-width: 1024px;*/
@@ -108,7 +123,7 @@ body, input, button, textarea {
 }
 #main {padding-bottom: 100px}
 .nobg #main {padding-bottom: 170px}
-#content {padding: 0 40px; position: relative}
+#content, #fairycontent {padding: 0 40px; position: relative}
 .layout {text-align: center}
 .layout:after {content: ""; display: block; clear: both}
 p.title {font-size: 15px; font-weight: 500; margin-bottom: 23px}
@@ -165,7 +180,7 @@ p.resultText span {color: #7c8fff}
 .custom-border.big span.cb_bottom-right {width: 20px; height: 20px}
 .custom-border.onoff span.cb_bottom-right {width: 15px; height: 15px}
 .img-box {position: relative; overflow: hidden}
-.string {background: transparent url("../images/temp/string.png") 0 center repeat-x;}
+.string {background: transparent url("images/temp/string.png") 0 center repeat-x;}
 .string.alone {height: 8px; display: block; width: 100%; margin-bottom: 15px}
 .string span {background-color: #fff; padding: 0 10px}
 h3.string {font-size: 30px}
@@ -204,10 +219,10 @@ h2.hitches span:after {
     -o-transform: translate(30px, -50%);
     transform: translate(30px, -50%);
 }
-h2.booms span:before {background-image: url("../svg/booms-left.svg");}
-h2.hitches span:before {background-image: url("../svg/hitches_left.svg");}
-h2.booms span:after {background-image: url("../svg/booms-right.svg");}
-h2.hitches span:after {background-image: url("../svg/hitches_right.svg");}
+h2.booms span:before {background-image: url("svg/booms-left.svg");}
+h2.hitches span:before {background-image: url("svg/hitches_left.svg");}
+h2.booms span:after {background-image: url("svg/booms-right.svg");}
+h2.hitches span:after {background-image: url("svg/hitches_right.svg");}
 .classicButton {
     display: inline-block;
     padding: 7px 12px;
@@ -239,7 +254,7 @@ h2.hitches span:after {background-image: url("../svg/hitches_right.svg");}
     transition: all 0.3s;
 }
 .allElements:after {
-    background: url("../svg/currency_arrow_down.svg") no-repeat center center rgba(0, 0, 0, 0);
+    background: url("svg/currency_arrow_down.svg") no-repeat center center rgba(0, 0, 0, 0);
     bottom: 0;
     content: "";
     height: 7px;
@@ -257,7 +272,7 @@ h2.hitches span:after {background-image: url("../svg/hitches_right.svg");}
     transition: all 0.3s;
 }
 .allElements:before {
-    background: url("../svg/currency_arrow_down_hover.svg") no-repeat center center rgba(0, 0, 0, 0);
+    background: url("svg/currency_arrow_down_hover.svg") no-repeat center center rgba(0, 0, 0, 0);
     bottom: 0;
     content: "";
     height: 7px;
@@ -304,7 +319,7 @@ h2.hitches span:after {background-image: url("../svg/hitches_right.svg");}
     transition: all 0.3s;
 }
 .forwardEl:after {
-    background: url("../svg/arrow_small.svg") no-repeat center center rgba(0, 0, 0, 0);
+    background: url("svg/arrow_small.svg") no-repeat center center rgba(0, 0, 0, 0);
     bottom: 0;
     content: "";
     height: 13px;
@@ -321,7 +336,7 @@ h2.hitches span:after {background-image: url("../svg/hitches_right.svg");}
     transition: all 0.3s;
 }
 .forwardEl:before {
-    background: url("../svg/arrow_small_hover.svg") no-repeat center center rgba(0, 0, 0, 0);
+    background: url("svg/arrow_small_hover.svg") no-repeat center center rgba(0, 0, 0, 0);
     bottom: 0;
     content: "";
     height: 13px;
@@ -359,7 +374,7 @@ h2.hitches span:after {background-image: url("../svg/hitches_right.svg");}
     text-transform: uppercase;
 }
 .backdEl:after {
-    background: url("../svg/small_arrow_left_cleaned.svg") no-repeat center center rgba(0, 0, 0, 0);
+    background: url("svg/small_arrow_left_cleaned.svg") no-repeat center center rgba(0, 0, 0, 0);
     bottom: 0;
     content: "";
     height: 13px;
@@ -377,7 +392,7 @@ h2.hitches span:after {background-image: url("../svg/hitches_right.svg");}
     opacity: 1;
 }
 .backdEl:before {
-    background: url("../svg/small_arrow_left_hover.svg") no-repeat center center rgba(0, 0, 0, 0);
+    background: url("svg/small_arrow_left_hover.svg") no-repeat center center rgba(0, 0, 0, 0);
     bottom: 0;
     content: "";
     height: 13px;
@@ -410,7 +425,7 @@ h2.hitches span:after {background-image: url("../svg/hitches_right.svg");}
 }
 .sparkle {position: relative}
 .sparkle:before {
-    background: url("../svg/sparkles.svg") no-repeat scroll center center rgba(0, 0, 0, 0);
+    background: url("svg/sparkles.svg") no-repeat scroll center center rgba(0, 0, 0, 0);
     top: -19px;
     content: "";
     height: 32px;
@@ -444,7 +459,7 @@ h2.hitches span:after {background-image: url("../svg/hitches_right.svg");}
     left: 0;
     top: 0;
     position: absolute;
-    background: url("../svg/tick.svg") no-repeat 2px 4px transparent;
+    background: url("svg/tick.svg") no-repeat 2px 4px transparent;
     -webkit-background-size: 16px auto;
     background-size: 16px auto;
     opacity: 0;
@@ -692,7 +707,7 @@ h2.hitches span:after {background-image: url("../svg/hitches_right.svg");}
     position: absolute;
     width: 12px;
     height: 7px;
-    background: transparent url("../svg/currency_arrow_down.svg") center center no-repeat;
+    background: transparent url("svg/currency_arrow_down.svg") center center no-repeat;
     z-index: 1;
     top: 9px;
     right: 13px;
@@ -700,7 +715,7 @@ h2.hitches span:after {background-image: url("../svg/hitches_right.svg");}
     margin: auto;
 }
 .toolbar>div.language .sbToggle.sbToggleOpen {
-    background-image: url("../svg/currency_arrow_up.svg");
+    background-image: url("svg/currency_arrow_up.svg");
 }
 .toolbar>div.language .sbSelector {
     display: block;
@@ -907,7 +922,7 @@ h2.hitches span:after {background-image: url("../svg/hitches_right.svg");}
     border-style: solid solid solid none;
 }
 .sort .customSort span:after {
-    background: url("../svg/currency_arrow_down.svg") no-repeat scroll center center rgba(0, 0, 0, 0);
+    background: url("svg/currency_arrow_down.svg") no-repeat scroll center center rgba(0, 0, 0, 0);
     bottom: 0;
     content: "";
     height: 7px;
@@ -924,9 +939,9 @@ h2.hitches span:after {background-image: url("../svg/hitches_right.svg");}
     -o-transition: all 0.3s;
     transition: all 0.3s;
 }
-.sort .customSort span.up:after {background-image: url("../svg/currency_arrow_up_cleaned.svg")}
+.sort .customSort span.up:after {background-image: url("svg/currency_arrow_up_cleaned.svg")}
 .sort .customSort span:before {
-    background: url("../svg/currency_arrow_down_hover.svg") no-repeat scroll center center rgba(0, 0, 0, 0);
+    background: url("svg/currency_arrow_down_hover.svg") no-repeat scroll center center rgba(0, 0, 0, 0);
     bottom: 0;
     content: "";
     height: 7px;
@@ -943,7 +958,7 @@ h2.hitches span:after {background-image: url("../svg/hitches_right.svg");}
     -o-transition: all 0.3s;
     transition: all 0.3s;
 }
-.sort .customSort span.up:before {background-image: url("../svg/currency_arrow_up_hover.svg")}
+.sort .customSort span.up:before {background-image: url("svg/currency_arrow_up_hover.svg")}
 .pagination > span {margin: 0 7px}
 .pagination a {
     display: inline-block;
@@ -1033,7 +1048,7 @@ h2.hitches span:after {background-image: url("../svg/hitches_right.svg");}
     right: 0;
 }
 #owl-demo.owl-theme .owl-controls .owl-page.active span {
-    background: transparent url("../svg/footprint.svg") center center no-repeat;
+    background: transparent url("svg/footprint.svg") center center no-repeat;
     -webkit-background-size: 30px 27px;
     background-size: 30px 27px;
     width: 30px;
@@ -1078,13 +1093,13 @@ h2.hitches span:after {background-image: url("../svg/hitches_right.svg");}
     transition: all 0.3s;
 }
 #owl-demo.owl-theme .owl-controls .owl-buttons .owl-prev:after {
-    background-image: url("../svg/arrow_big.svg");
+    background-image: url("svg/arrow_big.svg");
     background-position: 30px center;
     right: 0;
 
 }
 #owl-demo.owl-theme .owl-controls .owl-buttons .owl-next:after {
-    background-image: url("../svg/slider_arrow_right.svg");
+    background-image: url("svg/slider_arrow_right.svg");
     background-position: 17px center;
     left: 0;
 
@@ -1154,7 +1169,7 @@ h2.hitches span:after {background-image: url("../svg/hitches_right.svg");}
 }
 .library>section.quot .quotBlock {
     padding: 20px 5px;
-    background: transparent url("../svg/quote_bg.svg") center center no-repeat;
+    background: transparent url("svg/quote_bg.svg") center center no-repeat;
     -webkit-background-size: auto 100%;
     background-size: auto 100%;
     margin-bottom: 31px;
@@ -1183,6 +1198,7 @@ h2.hitches span:after {background-image: url("../svg/hitches_right.svg");}
     width: 25%;
     margin-bottom: 20px;
     /*padding: 0 20px;*/
+
 }
 .likes.oneline>ul li,
 .popular li,
@@ -1406,7 +1422,7 @@ h2.hitches span:after {background-image: url("../svg/hitches_right.svg");}
     position: absolute;
     bottom: 100%;
     right: 100%;
-    background: transparent url("../svg/sparkles.svg")center center no-repeat;
+    background: transparent url("svg/sparkles.svg")center center no-repeat;
     display: none;
     -webkit-transform: translate(0, 50%);
     -moz-transform: translate(0, 50%);
@@ -1423,7 +1439,7 @@ h2.hitches span:after {background-image: url("../svg/hitches_right.svg");}
     display: block;
     width: 186px;
     height: 135px;
-    background: transparent url("../svg/stamp.svg") center center no-repeat;
+    background: transparent url("svg/stamp.svg") center center no-repeat;
     -webkit-background-size: 100% 100%;
     background-size: 100% 100%;
     color: #2a3fbe;
@@ -1459,28 +1475,31 @@ h2.hitches span:after {background-image: url("../svg/hitches_right.svg");}
     z-index: 2;
     padding: 40px 20px;
 }
+.fairyPage #footer {background-color: #fff}
 #footer:before {
     content: "";
     position: absolute;
     width: 176px;
     height: 160px;
-    background: transparent url("../svg/lighthouse_illustration.svg") center 100% no-repeat;
+    background: transparent url("svg/lighthouse_illustration.svg") center 100% no-repeat;
     top: -158px;
     right: 50%;
     margin-right: 524px;
 }
+.fairyPage #footer:before {background-image: url("svg/lighthouse_illustration_fairy.svg")}
 #footer:after {
     content: "";
     position: absolute;
     width: 144px;
     height: 172px;
-    background: transparent url("../svg/ship_illustration.svg") center 100% no-repeat;
+    background: transparent url("svg/ship_illustration.svg") center 100% no-repeat;
     top: -72px;
     left: 50%;
     /*margin-left: 572px;*/
     margin-left: 622px;
     z-index: 3;
 }
+.fairyPage #footer:after {background-image: url("svg/ship_illustration_fairy.svg")}
 @media screen and (max-width:1440px) {
     #footer:before {
         right: auto;
@@ -1736,6 +1755,7 @@ h2.hitches span:after {background-image: url("../svg/hitches_right.svg");}
 .authorInfo {text-align: left; margin-top: 11px}
 .authorInfo .name {font-size: 15px; font-weight: 500; display: inline-block}
 .authorInfo time {font-size: 14px; display: block}
+.f-comments .authorInfo time {color: #5367de}
 .authorMessage {
     float: left;
     font-size: 15px;
@@ -1853,7 +1873,7 @@ h2.hitches span:after {background-image: url("../svg/hitches_right.svg");}
     margin-bottom: 27px;
 }
 .your-comment form .file {
-    background: url("../svg/photo_cleaned.svg") no-repeat 0 center rgba(0, 0, 0, 0);
+    background: url("svg/photo_cleaned.svg") no-repeat 0 center rgba(0, 0, 0, 0);
     color: #000;
     cursor: pointer;
     font-size: 14px;
@@ -2092,12 +2112,12 @@ h2.hitches span:after {background-image: url("../svg/hitches_right.svg");}
     transition: all 0.3s;
 }
 .fred-buttons .fred-prev:after {
-    background-image: url("../svg/arrow_big.svg");
+    background-image: url("svg/arrow_big.svg");
     background-position: 30px center;
     right: 0;
 }
 .fred-buttons .fred-next:after {
-    background-image: url("../svg/slider_arrow_right.svg");
+    background-image: url("svg/slider_arrow_right.svg");
     background-position: 17px center;
     left: 0;
 }
@@ -2186,7 +2206,7 @@ h2.hitches span:after {background-image: url("../svg/hitches_right.svg");}
     left: 30px;
 }
 .pika-imgnav a.previous:after {
-    background-image: url("../svg/arrow_big.svg");
+    background-image: url("svg/arrow_big.svg");
     background-position: 30px center;
     right: 0;
 }
@@ -2194,7 +2214,7 @@ h2.hitches span:after {background-image: url("../svg/hitches_right.svg");}
     right: 30px;
 }
 .pika-imgnav a.next:after {
-    background-image: url("../svg/slider_arrow_right.svg");
+    background-image: url("svg/slider_arrow_right.svg");
     background-position: 17px center;
     left: 0;
 }
@@ -2298,7 +2318,7 @@ h2.hitches span:after {background-image: url("../svg/hitches_right.svg");}
     right: 0;
     margin: 0 auto;
     bottom: -35px;
-    background: transparent url("../svg/divider_cleaned.svg") 0 0 no-repeat;
+    background: transparent url("svg/divider_cleaned.svg") 0 0 no-repeat;
     -webkit-background-size: 234px auto;
     background-size: 234px auto;
 }
@@ -2598,7 +2618,7 @@ h2.hitches span:after {background-image: url("../svg/hitches_right.svg");}
     overflow: hidden;
 }
 .select-field .sbToggle {
-    background: url("../svg/currency_arrow_down.svg") no-repeat scroll center center rgba(0, 0, 0, 0);
+    background: url("svg/currency_arrow_down.svg") no-repeat scroll center center rgba(0, 0, 0, 0);
     content: "";
     height: 7px;
     margin: auto;
@@ -2609,7 +2629,7 @@ h2.hitches span:after {background-image: url("../svg/hitches_right.svg");}
     /*z-index: 1;*/
 
 }
-.select-field .sbToggle.sbToggleOpen {background-image: url("../svg/currency_arrow_up.svg");}
+.select-field .sbToggle.sbToggleOpen {background-image: url("svg/currency_arrow_up.svg");}
 .select-field .sbSelector {
     font-size: 15px;
     font-weight: 300;
@@ -2744,7 +2764,7 @@ h2.hitches span:after {background-image: url("../svg/hitches_right.svg");}
 }
 .ticks-field .ticks label:after {
     content: "";
-    background: url("../svg/tick.svg") no-repeat scroll 2px 4px rgba(0, 0, 0, 0);
+    background: url("svg/tick.svg") no-repeat scroll 2px 4px rgba(0, 0, 0, 0);
     -webkit-background-size: 16px auto;
     background-size: 16px auto;
     cursor: pointer;
@@ -3002,7 +3022,7 @@ h2.hitches span:after {background-image: url("../svg/hitches_right.svg");}
 .bs_pic .img-box {width: 100%; height: 100%}
 .bs_pic .img-box .colorBG {background-color: rgba(7, 23, 124, 0.6); opacity: 0}
 .bs_pic .fullContainer {
-    background: transparent url("../images/book.png") 0 0 no-repeat;
+    background: transparent url("images/book.png") 0 0 no-repeat;
     -webkit-background-size: 181px 150px;
     background-size: 181px 150px;
 }
@@ -3084,7 +3104,7 @@ h2.hitches span:after {background-image: url("../svg/hitches_right.svg");}
 }
 .faqBox section.active header p {color: #2a3fbe}
 .faqBox section header .arrow {
-    background: url("../svg/currency_arrow_down_cleaned.svg") no-repeat center center rgba(0, 0, 0, 0);
+    background: url("svg/currency_arrow_down_cleaned.svg") no-repeat center center rgba(0, 0, 0, 0);
     height: 7px;
     margin: auto;
     position: absolute;
@@ -3095,7 +3115,7 @@ h2.hitches span:after {background-image: url("../svg/hitches_right.svg");}
     z-index: 1;
 
 }
-.faqBox section.active header .arrow {background-image: url("../svg/currency_arrow_up_bl.svg")}
+.faqBox section.active header .arrow {background-image: url("svg/currency_arrow_up_bl.svg")}
 .faqBox section header p span {
     font-weight: 400;
     color: #7f7f7f;
@@ -3263,3 +3283,43 @@ h2.hitches span:after {background-image: url("../svg/hitches_right.svg");}
     display: block;
 }
 .contactBox p span {display: block}
+
+/*--------------------------------Fairy page--------------------------------*/
+
+.fairyPostBox h2 {
+    font-size: 70px;
+    padding: 65px 0;
+    position: relative;
+    color: #2134a4;
+}
+.fairyPostContainer {
+    background-color: #fff;
+    /*margin: 0 40px;*/
+    text-align: center;
+}
+.fairyPostContainer > article {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 40px;
+}
+.fairyPostAbout img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+.fairyPostAbout p.title {font-size: 32px; font-weight: 400}
+.fairyPostAbout span {
+    display: block;
+    font-size: 15px;
+    font-weight: 400;
+    text-align: left;
+    line-height: 21px;
+}
+.f-comments {background-color: #b0bcff}
+.f-comments .string span {background-color: #b0bcff}
+.f-comments .your-comment > article {background-color: transparent}
+.footer_tools .socials ul li a svg.svg-out {
+    
+}
