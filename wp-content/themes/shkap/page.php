@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+<?php if (function_exists('homepage_slider')) { homepage_slider();} ?>
 
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 

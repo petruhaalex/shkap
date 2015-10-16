@@ -65,8 +65,10 @@
                     <header id="header">
                         <div class="header-container">
                             <h1 class="logo">
-                                <a href="<?php echo home_url(); ?>"><img src="<?php echo home_url('/wp-content/uploads/'); ?>svg/logo_shkap.svg" alt="logo"/></a>
-                                Лавка чудес книжного шкапа
+                                <!--<a href="<?php // echo home_url(); ?>"><img src="<?php // echo home_url('/wp-content/uploads/'); ?>svg/logo_shkap.svg" alt="logo"/></a>-->
+                                
+                                <a href="<?php echo home_url(); ?>"><img src="<?php echo get_theme_mod( 'shkap_header_logo', get_template_directory_uri().'/svg/logo_shkap.svg');?>" alt="logo"/></a>
+                                    Лавка чудес книжного шкапа
                             </h1>
                             <nav id="main_menu" class="layout">
                                 <span class="slogan">Возможно всё!</span>

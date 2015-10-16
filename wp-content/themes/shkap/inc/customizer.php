@@ -35,7 +35,8 @@ function shkap_customize_register( $wp_customize ) {
             'section' => 'shkap_theme_setting',
         )
     ));
-
+    
+    /* Main PHONE */
     $wp_customize->add_setting( 'shkap_main_phone' ,
         array('sanitize_callback' => 'shkap_sanitize_text', 'default' =>  '+375 296 125 125'));
 
@@ -45,7 +46,18 @@ function shkap_customize_register( $wp_customize ) {
         'settings' => 'shkap_main_phone',
         'priority' => '2',
     ) );
+    
+    /* Header - Logo */
+    $wp_customize->add_setting( 'shkap_header_logo',
+    array('sanitize_callback' => 'esc_url_raw', 'default' => get_template_directory_uri() .'/svg/logo_shkap.svg') );
+            $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'shkap_header_logo', array(
+                'label'    => __( 'Logo:', 'shkap' ),
+                'section'  => 'shkap_theme_setting',
+                'settings' => 'shkap_header_logo',
+                'priority' => '3',
+            ) ) );
 
+    
     function shkap_sanitize_text( $input ) {
         return wp_kses_post( force_balance_tags( $input ) );
     }
