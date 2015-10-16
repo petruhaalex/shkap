@@ -861,7 +861,7 @@ h2.hitches span:after {background-image: url("svg/hitches_right.svg");}
 }
 .hidden_menu.passive {opacity: 0; z-index: -1}
 /*.catalog-menu.active .hidden_menu {opacity: 1}*/
-.hidden_menu .sidebar_menu {
+.hidden_menu .sidebar_menu, .hidden_menu .product-categories {
     padding: 0 8px 0 45px;
     display: none;
 }
@@ -1180,6 +1180,7 @@ h2.hitches span:after {background-image: url("svg/hitches_right.svg");}
 .library>section.quot .quotBlock p span.quoteleft svg {
     top: -4px;
     left: -45px;
+
     width: 30px;
 }
 .library>section.quot .quotBlock p span.quoteright svg {
@@ -1404,10 +1405,10 @@ h2.hitches span:after {background-image: url("svg/hitches_right.svg");}
     box-sizing: border-box;
     padding: 0 15px 170px 40px;
 }
-.sidebar_menu {text-align: left; margin-bottom: 38px}
-.sidebar_menu>li {margin-bottom: 20px}
-.sidebar_menu > li:last-of-type {margin-bottom: 0}
-.sidebar_menu>li > a {
+.sidebar_menu, .product-categories {text-align: left; margin-bottom: 38px}
+.sidebar_menu>li, .product-categories>li {margin-bottom: 20px}
+.sidebar_menu > li:last-of-type, .product-categories > li:last-of-type {margin-bottom: 0}
+.sidebar_menu>li > a, .product-categories>li > a {
     position: relative;
     -webkit-transition: all 0.1s;
     -moz-transition: all 0.1s;
@@ -1415,7 +1416,7 @@ h2.hitches span:after {background-image: url("svg/hitches_right.svg");}
     -o-transition: all 0.1s;
     transition: all 0.1s;
 }
-.sidebar_menu>li>a:before {
+.sidebar_menu>li>a:before, .product-categories>li>a:before {
     content: "";
     width: 14px;
     height: 17px;
@@ -1431,10 +1432,10 @@ h2.hitches span:after {background-image: url("svg/hitches_right.svg");}
     transform: translate(0, 50%);
 }
 
-.sidebar_menu>li>a.active {
+.sidebar_menu>li>a.active, .product-categories>li>a.active {
     font-weight: 500;
 }
-.sidebar_menu>li>a.active:before {display: block}
+.sidebar_menu>li>a.active:before, .product-categories>li>a.active:before {display: block}
 .fairyPost {
     display: block;
     width: 186px;
@@ -1449,10 +1450,10 @@ h2.hitches span:after {background-image: url("svg/hitches_right.svg");}
     padding: 0 20px;
     margin-bottom: 42px;
 }
-.sidebar_menu > li ul {
+.sidebar_menu > li ul, .product-categories > li ul {
     padding: 13px 0 0 1px;
 }
-.sidebar_menu > li ul li a {
+.sidebar_menu > li ul li a, .product-categories > li ul li a {
     border-radius: 20px;
     display: inline-block;
     font-size: 14px;
@@ -1460,7 +1461,7 @@ h2.hitches span:after {background-image: url("svg/hitches_right.svg");}
     padding: 8px 13px;
     text-align: left;
 }
-.sidebar_menu > li ul li a.active {
+.sidebar_menu > li ul li a.active, .product-categories > li ul li a.active {
     font-weight: 700;
     background-color: #fff;
 }
@@ -2431,6 +2432,7 @@ h2.hitches span:after {background-image: url("svg/hitches_right.svg");}
 .basket-table > li div.tableCheking {width: 7%}
 .basket-table > li div.tablePicture {width: 15%}
 .basket-table > li div.tableName {width: 37%; text-align: left}
+
 .basket-table > li div.tableCount {width: 15%}
 .basket-table > li div.tableSale {width: 26%; text-align: right}
 .basket-table .tableHead {

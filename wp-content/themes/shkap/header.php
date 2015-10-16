@@ -1,3 +1,12 @@
+<?php
+/**
+ * The template for displaying Header.
+ *
+ * @package WordPress
+ * @subpackage Shkap
+ * @since Shkap 1.0
+ */
+?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 
@@ -10,32 +19,27 @@
            
         <!--<title><?php // wp_title( '|', true, 'right' ); ?></title>-->
 	<title>
-		   <?php
-		      if (function_exists('is_tag') && is_tag()) {
-		         single_tag_title("Tag Archive for &quot;"); echo '&quot; - '; }
-		      elseif (is_archive()) {
-		         wp_title(''); echo ' Archive - '; }
-		      elseif (is_search()) {
-		         echo 'Search for &quot;'.wp_specialchars($s).'&quot; - '; }
-		      elseif (!(is_404()) && (is_single()) || (is_page())) {
-		         wp_title(''); echo ' - '; }
-		      elseif (is_404()) {
-		         echo 'Not Found - '; }
-		      if (is_home()) {
-		         bloginfo('name'); echo ' - '; bloginfo('description'); }
-		      else {
-		          bloginfo('name'); }
-		      if ($paged>1) {
-		         echo ' - page '. $paged; }
-		   ?>
-            
+            <?php
+               if (function_exists('is_tag') && is_tag()) {
+                  single_tag_title("Tag Archive for &quot;"); echo '&quot; - '; }
+               elseif (is_archive()) {
+                  wp_title(''); echo ' Archive - '; }
+               elseif (is_search()) {
+                  echo 'Search for &quot;'.wp_specialchars($s).'&quot; - '; }
+               elseif (!(is_404()) && (is_single()) || (is_page())) {
+                  wp_title(''); echo ' - '; }
+               elseif (is_404()) {
+                  echo 'Not Found - '; }
+               if (is_home()) {
+                  bloginfo('name'); echo ' - '; bloginfo('description'); }
+               else {
+                   bloginfo('name'); }
+               if ($paged>1) {
+                  echo ' - page '. $paged; }
+               ?>            
 	</title>
 	
-	<link rel="shortcut icon" href="/favicon.ico">
-	
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
-        
-        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/hovers.css">
         <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,700&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
 
 	<!--<link rel="pingback" href="<?php // bloginfo('pingback_url'); ?>">-->
@@ -46,15 +50,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-	
-<!--	<div id="page-wrap">
-
-		<div id="header">
-			<h1><a href="<?php // echo get_option('home'); ?>/"><?php // bloginfo('name'); ?></a></h1>
-			<div class="description"><?php // bloginfo('description'); ?></div>
-		</div>-->
-
-
+    
     <div id="wrapper">
         <div class="bgLeft"></div>
         <div class="bgRight"></div>
@@ -65,8 +61,6 @@
                     <header id="header">
                         <div class="header-container">
                             <h1 class="logo">
-                                <!--<a href="<?php // echo home_url(); ?>"><img src="<?php // echo home_url('/wp-content/uploads/'); ?>svg/logo_shkap.svg" alt="logo"/></a>-->
-                                
                                 <a href="<?php echo home_url(); ?>"><img src="<?php echo get_theme_mod( 'shkap_header_logo', get_template_directory_uri().'/svg/logo_shkap.svg');?>" alt="logo"/></a>
                                     Лавка чудес книжного шкапа
                             </h1>
@@ -120,9 +114,6 @@
                                         <option>BYR</option>
                                         <option>RUS</option>
                                     </select>
-                                    <!--<div class="forselect"></div>-->
-                                    <!--<svg class="selectOpen" transform="rotate(90 0 0)" xmlns="http://www.w3.org/2000/svg" viewBox="-8 13 8 21" enable-background="new 0 0 7 12"><path d="m6.8 6.5c.2-.4.3-.9 0-1.3-1.5-2-3.9-4.1-5.3-5.1-.8-.4-1.2.4-1.3.6-.1.4-.1.9 0 1.1 1.2 1.3 4.1 3.6 4.1 4 0 .7-3 3-4.2 4.4 0 0-.3.7.1 1.2.4.5 1.4.9 2 .3 1.5-1.7 2.9-3.2 4.4-4.9-.1 0 .2-.2.2-.3" fill-rule="evenodd"/></svg>-->
-                                    <!--<svg class="selectClose" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7 12" enable-background="new 0 0 7 12"><path d="m6.8 6.5c.2-.4.3-.9 0-1.3-1.5-2-3.9-4.1-5.3-5.1-.8-.4-1.2.4-1.3.6-.1.4-.1.9 0 1.1 1.2 1.3 4.1 3.6 4.1 4 0 .7-3 3-4.2 4.4 0 0-.3.7.1 1.2.4.5 1.4.9 2 .3 1.5-1.7 2.9-3.2 4.4-4.9-.1 0 .2-.2.2-.3" fill-rule="evenodd"/></svg>-->
                                 </div>
                             </div>
                         </div>

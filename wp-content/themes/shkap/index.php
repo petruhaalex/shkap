@@ -30,6 +30,10 @@
 
 	<?php endif; ?>
 
+            </div><!-- #content -->
+    </div><!-- #main -->
+</div><!--.main-container -->
+
 <?php get_sidebar(); ?>
 
 <?php get_footer(); ?>
