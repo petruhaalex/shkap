@@ -1,0 +1,19 @@
+<?php
+/**
+ * Sidebar
+ *
+ * @author 		WooThemes
+ * @package 	WooCommerce/Templates
+ * @version     1.6.4
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+?>            
+        </div><!-- #content -->
+    </div><!-- #main -->
+</div><!--.main-container -->
+
+<?php
+get_sidebar( 'shop' ); ?>

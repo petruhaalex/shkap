@@ -1,6 +1,8 @@
 /*--------------------------------hovers CSS--------------------------------*/
-
-.sidebar_menu>li a:hover {font-weight: 500}
+.sidebar_menu>li a:hover,
+.product-categories > li > a:hover,
+.product-categories > li ul li a:hover
+{font-weight: 500}
 #owl-demo.owl-theme .owl-controls .owl-page:hover span {background-color: #7c8fff}
 #owl-demo.owl-theme .owl-controls .owl-page.active:hover span {background-color: transparent}
 .likes>ul li:hover .book-container,

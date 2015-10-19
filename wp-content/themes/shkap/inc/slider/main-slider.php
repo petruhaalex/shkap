@@ -79,8 +79,8 @@
                         array(
                             'name' 			=> __('URL','shkap'),
                             'desc' 			=> '',
-                            'id' 			=> 'shkap_slideurl',
-                            'class'                     => 'shkap_slideurl',
+                            'id' 			=> '_shkap_slideurl',
+                            'class'                     => '_shkap_slideurl',
                             'type' 			=> 'text',
                             'rich_editor'               => 0,
                             'std'                       => '',
@@ -89,8 +89,8 @@
                         array(
                             'name' 			=> __('Description','shkap'),
                             'desc' 			=> '',
-                            'id' 			=> 'shkap_slide_desc',
-                            'class'                     => 'shkap_slide_desc',
+                            'id' 			=> '_shkap_slide_desc',
+                            'class'                     => '_shkap_slide_desc',
                             'type' 			=> 'text',
                             'rich_editor'               => 0,
                             'std'                       => '',
@@ -99,8 +99,8 @@
                         array(
                             'name' 			=> __('Promotions','shkap'),
                             'desc' 			=> '',
-                            'id' 			=> 'shkap_slide_prom',
-                            'class'                     => 'shkap_slide_prom',
+                            'id' 			=> '_shkap_slide_prom',
+                            'class'                     => '_shkap_slide_prom',
                             'type' 			=> 'text',
                             'rich_editor'               => 0,
                             'std'                       => '',
@@ -235,9 +235,9 @@
                         <span class="cb_bottom-right"><img src="<?php echo home_url('/wp-content/uploads/'); ?>images/temp/border_right-bottom_white.png" alt="right-bottom"/></span>
                         <div class="carousel-container">
                             <article class="pre-info">
-                                <p class="custom-font sparkle"><?php echo esc_attr( get_post_meta( get_the_id(), 'shkap_slide_desc', true ) );?></p>
-                                    <span><?php echo esc_attr( get_post_meta( get_the_id(), 'shkap_slide_prom', true ) );?></span>
-                                <a class="classicButton" href="<?php echo esc_url( get_post_meta( get_the_id(), 'shkap_slideurl', true ) ); ?>" target="<?php echo shkap_targetlink(); ?>">
+                                <p class="custom-font sparkle"><?php echo esc_attr( get_post_meta( get_the_id(), '_shkap_slide_desc', true ) );?></p>
+                                    <span><?php echo esc_attr( get_post_meta( get_the_id(), '_shkap_slide_prom', true ) );?></span>
+                                <a class="classicButton" href="<?php echo esc_url( get_post_meta( get_the_id(), '_shkap_slideurl', true ) ); ?>" target="<?php echo shkap_targetlink(); ?>">
                                     <?php echo __( 'More','shkap' );?>
                                 </a>
                             </article>

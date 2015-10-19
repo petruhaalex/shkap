@@ -133,7 +133,7 @@ p.resultText span {color: #7c8fff}
 .custom-font {font: 30px Verveine}
 .custom-font.upp {text-transform: uppercase}
 .small-banner {display: block; width: 180px; height: 150px;}
-.small-banner img {display: block; background-color: #eae7e3; text-align: center; line-height: 150px}
+.small-banner img {display: block; background-color: #eae7e3; text-align: center; line-height: 150px; width: 100%; height: 100%}
 .custom-border {position: relative}
 .custom-border span[class*=cb_]{position: absolute; z-index: 3}
 .custom-border span[class*=cb_] img {width: 100%; height: 100%; display: block}
@@ -290,6 +290,7 @@ h2.hitches span:after {background-image: url("svg/hitches_right.svg");}
     transition: all 0.3s;
 }
 .allElements span {color: #6b757f}
+.f-comments .allElements span {color: inherit}
 /*.allElements svg {*/
     /*bottom: 0;*/
     /*height: 22px;*/
@@ -861,7 +862,7 @@ h2.hitches span:after {background-image: url("svg/hitches_right.svg");}
 }
 .hidden_menu.passive {opacity: 0; z-index: -1}
 /*.catalog-menu.active .hidden_menu {opacity: 1}*/
-.hidden_menu .sidebar_menu, .hidden_menu .product-categories {
+.hidden_menu .sidebar_menu, .hidden_menu .product-categories  {
     padding: 0 8px 0 45px;
     display: none;
 }
@@ -1055,7 +1056,8 @@ h2.hitches span:after {background-image: url("svg/hitches_right.svg");}
     height: 27px;
     border-radius: 0;
 }
-#owl-demo.owl-theme .owl-controls .owl-buttons div {
+#owl-demo.owl-theme .owl-controls .owl-buttons div,
+.personCarousel.owl-theme .owl-controls .owl-buttons div {
     position: absolute;
     top: 50%;
     -webkit-transform: translate(0, -50%);
@@ -1073,16 +1075,35 @@ h2.hitches span:after {background-image: url("svg/hitches_right.svg");}
     background-color: transparent;
     opacity: 1;
 }
-#owl-demo.owl-theme .owl-controls .owl-buttons .owl-prev {left: 0;}
-#owl-demo.owl-theme .owl-controls .owl-buttons .owl-next {right: 0;}
-#owl-demo.owl-theme .owl-controls .owl-buttons div:after {
+.personCarousel.owl-theme .owl-controls .owl-buttons div {top: 90px}
+#owl-demo.owl-theme .owl-controls .owl-buttons .owl-prev,
+.personCarousel.owl-theme .owl-controls .owl-buttons .owl-prev {left: 0;}
+#owl-demo.owl-theme .owl-controls .owl-buttons .owl-next,
+.personCarousel.owl-theme .owl-controls .owl-buttons .owl-next {right: 0;}
+#owl-demo.owl-theme .owl-controls .owl-buttons div:after,
+.personCarousel.owl-theme .owl-controls .owl-buttons div:after {
+     content: "";
+     width: 60px;
+     height: 60px;
+     border-radius: 30px;
+     position: absolute;
+     top: 0;
+     background-color: #fff;
+     background-repeat: no-repeat;
+     -webkit-background-size: 13px auto;
+     background-size: 13px auto;
+     -webkit-transition: all 0.3s;
+     -moz-transition: all 0.3s;
+     -ms-transition: all 0.3s;
+     -o-transition: all 0.3s;
+     transition: all 0.3s;
+}
+.personCarousel.owl-theme .owl-controls .owl-buttons div:before {
     content: "";
     width: 60px;
     height: 60px;
-    border-radius: 30px;
     position: absolute;
     top: 0;
-    background-color: #fff;
     background-repeat: no-repeat;
     -webkit-background-size: 13px auto;
     background-size: 13px auto;
@@ -1091,18 +1112,36 @@ h2.hitches span:after {background-image: url("svg/hitches_right.svg");}
     -ms-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s;
+    opacity: 0;
 }
-#owl-demo.owl-theme .owl-controls .owl-buttons .owl-prev:after {
+.personCarousel.owl-theme .owl-controls .owl-buttons div:after {background-color: transparent}
+#owl-demo.owl-theme .owl-controls .owl-buttons .owl-prev:after,
+.personCarousel.owl-theme .owl-controls .owl-buttons .owl-prev:after {
     background-image: url("svg/arrow_big.svg");
     background-position: 30px center;
     right: 0;
-
 }
-#owl-demo.owl-theme .owl-controls .owl-buttons .owl-next:after {
+.personCarousel.owl-theme .owl-controls .owl-buttons .owl-prev:after {
+    background-image: url("svg/mus_slider_left.svg");
+}
+.personCarousel.owl-theme .owl-controls .owl-buttons .owl-prev:before {
+    background-image: url("svg/mus_slider_left_hov.svg");
+    background-position: 30px center;
+    right: 0;
+}
+#owl-demo.owl-theme .owl-controls .owl-buttons .owl-next:after,
+.personCarousel.owl-theme .owl-controls .owl-buttons .owl-next:after {
     background-image: url("svg/slider_arrow_right.svg");
     background-position: 17px center;
     left: 0;
-
+}
+.personCarousel.owl-theme .owl-controls .owl-buttons .owl-next:after {
+    background-image: url("svg/mus_slider_right.svg");
+}
+.personCarousel.owl-theme .owl-controls .owl-buttons .owl-next:before {
+    background-image: url("svg/mus_slider_right_hov.svg");
+    background-position: 17px center;
+    left: 0;
 }
 #owl-demo.owl-theme .owl-controls {margin: 0}
 #owl-demo.owl-theme .owl-pagination {
@@ -1180,7 +1219,6 @@ h2.hitches span:after {background-image: url("svg/hitches_right.svg");}
 .library>section.quot .quotBlock p span.quoteleft svg {
     top: -4px;
     left: -45px;
-
     width: 30px;
 }
 .library>section.quot .quotBlock p span.quoteright svg {
@@ -1199,7 +1237,12 @@ h2.hitches span:after {background-image: url("svg/hitches_right.svg");}
     width: 25%;
     margin-bottom: 20px;
     /*padding: 0 20px;*/
-
+}
+.likes>ul .owl-item li,
+.popular .owl-item li,
+.oneSection ul .owl-item li {
+    width: 100%;
+    float: none;
 }
 .likes.oneline>ul li,
 .popular li,
@@ -1213,8 +1256,8 @@ h2.hitches span:after {background-image: url("svg/hitches_right.svg");}
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     margin: 0 auto;
-    width: 100%;
-    max-width: 200px;
+    /*width: 100%;*/
+    width: 200px;
     padding: 18px 25px 100px;
     height: 100%;
     position: relative;
@@ -1283,7 +1326,10 @@ h2.hitches span:after {background-image: url("svg/hitches_right.svg");}
 }
 .likes>ul li .price .currentPrice,
 .popular li .price .currentPrice,
-.oneSection ul li .price .currentPrice {
+.oneSection ul li .price .currentPrice,
+.adviceBox .boxMain ul li label .currentPrice,
+.totalFormMain .postInfo .costCell .currentPrice,
+.fairyTabsBox .formContent .boxMain .formatDescr .currentPrice {
     font-weight: 500;
     font-size: 20px;
     color: #2a3fbe;
@@ -1292,11 +1338,14 @@ h2.hitches span:after {background-image: url("svg/hitches_right.svg");}
 }
 .likes>ul li .price .currentPrice:after,
 .popular li .price .currentPrice:after,
-.oneSection ul li .price .currentPrice:after {
+.oneSection ul li .price .currentPrice:after,
+.adviceBox .boxMain ul li label .currentPrice:after,
+.totalFormMain .postInfo .costCell .currentPrice:after,
+.fairyTabsBox .formContent .boxMain .formatDescr .currentPrice:after {
     content: attr(data-content);
     position: absolute;
     top: 0;
-    left: 100%;
+    left: 103%;
     font-size: 12px;
     font-weight: 300;
 }
@@ -1432,10 +1481,16 @@ h2.hitches span:after {background-image: url("svg/hitches_right.svg");}
     transform: translate(0, 50%);
 }
 
-.sidebar_menu>li>a.active, .product-categories>li>a.active {
+.sidebar_menu>li>a.active,
+.product-categories>li>a.active,
+.product-categories>li.current-cat>a,
+.product-categories > li.current-cat-parent>a {
     font-weight: 500;
 }
-.sidebar_menu>li>a.active:before, .product-categories>li>a.active:before {display: block}
+.sidebar_menu>li>a.active:before,
+.product-categories>li.current-cat>a:before,
+.product-categories > li.current-cat-parent>a:before,
+.product-categories>li>a.active:before {display: block}
 .fairyPost {
     display: block;
     width: 186px;
@@ -1461,7 +1516,9 @@ h2.hitches span:after {background-image: url("svg/hitches_right.svg");}
     padding: 8px 13px;
     text-align: left;
 }
-.sidebar_menu > li ul li a.active, .product-categories > li ul li a.active {
+.sidebar_menu > li ul li a.active,
+.product-categories > li.current-cat-parent ul li.current-cat a,
+.sidebar_menu > li ul li a.active {
     font-weight: 700;
     background-color: #fff;
 }
@@ -1796,6 +1853,7 @@ h2.hitches span:after {background-image: url("svg/hitches_right.svg");}
     max-width: 100%;
 }
 .comments-box .allElements {margin-left: 30%}
+.f-comments .allElements {border-color: #5367de}
 .your-comment {
     float: left;
     width: 25%;
@@ -1850,9 +1908,11 @@ h2.hitches span:after {background-image: url("svg/hitches_right.svg");}
     right: 4px;
     top: 4px;
 }
+.f-comments .toAuth ul li a svg.svg-in {fill: #b0bcff}
 .toAuth ul li a svg.svg-out {
     fill: #c0c0c0;
 }
+.f-comments .toAuth ul li a svg.svg-out {fill: #5367de}
 .your-comment form {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -2053,6 +2113,7 @@ h2.hitches span:after {background-image: url("svg/hitches_right.svg");}
     font-size: 42px;
     font-weight: 500;
     position: relative;
+    margin-bottom: 18px;
 }
 .productPrice .priceBlock .thisPrice .currentPrice:after {
     content: attr(data-content);
@@ -2069,11 +2130,12 @@ h2.hitches span:after {background-image: url("svg/hitches_right.svg");}
     text-align: left;
 }
 .popularity {position: relative; padding: 0 15px}
-.popular li {
-    float: left;
-    width: 200px;
-    text-align: center;
-}
+/*.popular li {*/
+    /*float: left;*/
+    /*width: 200px;*/
+    /*text-align: center;*/
+/*}*/
+.popular.owl-theme .owl-buttons div,
 .fred-buttons div {
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0);
@@ -2093,8 +2155,11 @@ h2.hitches span:after {background-image: url("svg/hitches_right.svg");}
     transform: translate(0px, -50%);
     width: 30px;
 }
+.popular.owl-theme .owl-buttons div.owl-prev,
 .fred-buttons .fred-prev {left: 0}
+.popular.owl-theme .owl-buttons div.owl-next,
 .fred-buttons .fred-next {right: 0}
+.popular.owl-theme .owl-buttons div:after,
 .fred-buttons div:after {
     background-color: #ffffff;
     background-repeat: no-repeat;
@@ -2112,11 +2177,13 @@ h2.hitches span:after {background-image: url("svg/hitches_right.svg");}
     -o-transition: all 0.3s;
     transition: all 0.3s;
 }
+.popular.owl-theme .owl-buttons div.owl-prev:after,
 .fred-buttons .fred-prev:after {
     background-image: url("svg/arrow_big.svg");
     background-position: 30px center;
     right: 0;
 }
+.popular.owl-theme .owl-buttons div.owl-next:after,
 .fred-buttons .fred-next:after {
     background-image: url("svg/slider_arrow_right.svg");
     background-position: 17px center;
@@ -2254,6 +2321,49 @@ h2.hitches span:after {background-image: url("svg/hitches_right.svg");}
 }
 #gallery span.close svg {
     fill: #2a3fbe
+}
+
+/*--------------------------------overlay--------------------------------*/
+
+#overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(42,63,190,0.6);
+    z-index: 5;
+    display: none;
+    opacity: 0;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+#overlay.active {opacity: 1}
+#overlay > div {display: table; width: 100%; height: 100%}
+#overlay > div > div {display: table-cell; vertical-align: middle; text-align: center}
+#overlay .overlay-box {
+    display: inline-block;
+    position: relative;
+}
+#overlay .overlay-box img {
+    display: block;
+    margin: 0 auto;
+    max-width: 600px;
+    max-height: 400px;
+}
+#overlay span.close {
+    height: 16px;
+    top: -30px;
+    position: absolute;
+    right: -30px;
+    width: 16px;
+    cursor: pointer;
+}
+#overlay span.close svg {
+    fill: #fff
 }
 
 /*--------------------------------register--------------------------------*/
@@ -2432,7 +2542,6 @@ h2.hitches span:after {background-image: url("svg/hitches_right.svg");}
 .basket-table > li div.tableCheking {width: 7%}
 .basket-table > li div.tablePicture {width: 15%}
 .basket-table > li div.tableName {width: 37%; text-align: left}
-
 .basket-table > li div.tableCount {width: 15%}
 .basket-table > li div.tableSale {width: 26%; text-align: right}
 .basket-table .tableHead {
@@ -3288,30 +3397,66 @@ h2.hitches span:after {background-image: url("svg/hitches_right.svg");}
 
 /*--------------------------------Fairy page--------------------------------*/
 
-.fairyPostBox h2 {
-    font-size: 70px;
-    padding: 65px 0;
-    position: relative;
+#fairycontent {padding-bottom: 100px}
+#main #fairycontent {padding-bottom: 0}
+#fairycontent h2 {
     color: #2134a4;
+    font-size: 70px;
 }
+.fairyPostBox h2 {
+    padding: 65px 0 40px;
+    position: relative;
+
+}
+.fairyPostBox h2:before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: -30px;
+    width: 330px;
+    height: 160px;
+    background: transparent url("svg/flying_owl.svg")0 0 no-repeat;
+    -webkit-background-size: 330px 160px;
+    background-size: 330px 160px;
+}
+.fairyPostBox h2 span {position: relative;}
+.fairyPostBox h2 span:after {
+    content: "";
+    position: absolute;
+    top: -25px;
+    left: 90%;
+    width: 203px;
+    height: 83px;
+    background: transparent url("svg/stars.svg") 0 0 no-repeat;
+    -webkit-background-size: 203px 83px;
+    background-size: 203px 83px;
+}
+.fairyTabsBox h2 {margin-bottom: 12px}
 .fairyPostContainer {
     background-color: #fff;
     /*margin: 0 40px;*/
     text-align: center;
+    margin-bottom: 70px;
 }
 .fairyPostContainer > article {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    padding: 40px;
+    padding: 40px 40px 70px;
 }
+.fairyPostAbout {margin-bottom: 33px}
 .fairyPostAbout img {
     display: block;
     width: 100%;
     height: auto;
     border-radius: 10px;
+    margin-bottom: 35px;
 }
-.fairyPostAbout p.title {font-size: 32px; font-weight: 400}
+.fairyPostAbout p.title {
+    font-size: 32px;
+    font-weight: 400;
+    margin-bottom: 40px;
+}
 .fairyPostAbout span {
     display: block;
     font-size: 15px;
@@ -3319,9 +3464,711 @@ h2.hitches span:after {background-image: url("svg/hitches_right.svg");}
     text-align: left;
     line-height: 21px;
 }
-.f-comments {background-color: #b0bcff}
+.fairyPostContainer .updownletter {
+    margin-bottom: 60px;
+}
+
+.fairyMuseumBox {padding-top: 60px}
+.fairyMuseumBox h2 {margin-bottom: 15px}
+#fairycontent p.descript {color: #fff; line-height: 22px; margin-bottom: 55px}
+#fairycontent .pagination a.p-left svg,
+#fairycontent .pagination a.p-right svg {fill: #ffdb46;}
+#fairycontent .pagination a span,
+#fairycontent .pagination > span {color: #fff;}
+#fairycontent .pagination a.active span {color: #000;}
+.fairyPostContainer .getPost,
+.fairyMuseumBox .getPost {
+    display: inline-block;
+    font-size: 40px;
+    line-height: 44px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 5px 0;
+    text-transform: uppercase;
+    width: 273px;
+    height: 116px;
+    background: transparent url("svg/order_letter_button.svg") 0 0 no-repeat;
+    -webkit-background-size: 273px 116px;
+    background-size: 273px 116px;
+}
+.fairyBanners li {
+    display: inline-block;
+    width: 422px;
+    height: 160px;
+    margin: 0 25px;
+    background: transparent url("svg/stamp_blue_white.svg")0 0 no-repeat;
+    -webkit-background-size: 422px 160px;
+    background-size: 422px 160px;
+}
+.fairyBanners li a {
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 40px;
+    line-height: 44px;
+    display: block;
+    padding: 34px 0;
+}
+.f-comments {
+    background-color: #b0bcff;
+    padding: 50px 0 0;
+    position: relative;
+}
+.f-comments:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -18px;
+    height: 23px;
+    background: transparent url("svg/dash_line.svg") 0 0 repeat-x;
+}
 .f-comments .string span {background-color: #b0bcff}
 .f-comments .your-comment > article {background-color: transparent}
-.footer_tools .socials ul li a svg.svg-out {
-    
+.fairyMuseumMain {margin-bottom: 45px}
+.museum li {
+    float: left;
+    width: 33.33%;
+    margin-bottom: 27px;
 }
+.MusContainer {
+    max-width: 260px;
+    margin: 0 auto;
+    text-align: center;
+}
+.MusPicWrap {
+    width: 260px;
+    margin: 0 auto 10px;
+    height: 220px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.MusPicWrap:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(33,52,164,0.7) url("svg/loupe.svg") center center no-repeat;
+    -webkit-background-size: 65px 65px;
+    background-size: 65px 65px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    opacity: 0;
+}
+.MusContainer strong {
+    display: block;
+    font-size: 17px;
+    font-weight: 500;
+    color: #fff;
+}
+.MusContainer span {
+    display: block;
+    color: #000;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.fairyTabsBox {
+    padding: 45px 0 0;
+}
+.fairyTabsBox form {position: relative}
+.fairyTabsBox form > input[type=radio],
+.fairyTabsBox form > input[type=checkbox] {position: absolute; opacity: 0; z-index: -1}
+
+.fairyTabsBox form > input#tab1:checked ~ .formContent .box01,
+.fairyTabsBox form > input#tab2:checked ~ .formContent .box02,
+.fairyTabsBox form > input#tab3:checked ~ .formContent .box03,
+.fairyTabsBox form > input#tab4:checked ~ .formContent .box04,
+.fairyTabsBox form > input#tab5:checked ~ .formContent .box05 {display: block}
+
+
+
+.fairyTabsBox .tabs {
+    margin-bottom: 42px;
+}
+.fairyTabsBox .tabs ul li {
+    display: inline-block;
+    position: relative;
+    margin: 0 13px;
+}
+.fairyTabsBox .tabs ul li label {
+    position: relative;
+    display: block;
+    width: 100px;
+    height: 62px;
+    cursor: pointer;
+}
+.fairyTabsBox .tabs ul li label svg {
+    width: 100px;
+    height: 62px;
+    fill: #6174e4;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.fairyTabsBox form > input#tab1:checked ~ .tabs .tb01 svg,
+.fairyTabsBox form > input#tab2:checked ~ .tabs .tb02 svg,
+.fairyTabsBox form > input#tab3:checked ~ .tabs .tb03 svg,
+.fairyTabsBox form > input#tab4:checked ~ .tabs .tb04 svg,
+.fairyTabsBox form > input#tab5:checked ~ .tabs .tb05 svg {fill: #fad943;}
+
+
+.fairyTabsBox .tabs ul li label span {
+    text-align: center;
+    font-size: 50px;
+    line-height: 100%;
+    right: 10px;
+    color: #7c8fff;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.fairyTabsBox form > input#tab1:checked ~ .tabs .tb01 span,
+.fairyTabsBox form > input#tab2:checked ~ .tabs .tb02 span,
+.fairyTabsBox form > input#tab3:checked ~ .tabs .tb03 span,
+.fairyTabsBox form > input#tab4:checked ~ .tabs .tb04 span,
+.fairyTabsBox form > input#tab5:checked ~ .tabs .tb05 span {color: #2134a4;}
+
+.fairyTabsBox form > input#tab1:checked ~ .formContent > .postInfo,
+.fairyTabsBox form > input#tab5:checked ~ .formContent > .postInfo {display: none}
+
+.fairyTabsBox .postInfo {margin-bottom: 28px}
+.fairyTabsBox .postInfo ul {
+    display: table;
+    width: 100%;
+}
+.fairyTabsBox .postInfo ul li {
+    display: table-cell;
+    max-width: 0;
+    text-align: left;
+}
+.fairyTabsBox form > input#tab2:checked ~ .formContent .postInfo ul li.formatCell {opacity: 0}
+.fairyTabsBox form > input#tab2:checked ~ .formContent .postInfo ul li.adviceCell {opacity: 0}
+
+.fairyTabsBox form > input#tab3:checked ~ .formContent .postInfo ul li.adviceCell {opacity: 0}
+.fairyTabsBox .postInfo ul li p {
+    padding: 0 10px;
+    margin-bottom: 4px;
+}
+.fairyTabsBox .postInfo ul li strong {
+    font-size: 15px;
+    font-weight: 400;
+    color: #000;
+}
+.fairyTabsBox .postInfo ul li span {
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    line-height: 20px;
+}
+.fairyTabsBox .postInfo ul li.costCell span {font-size: 20px}
+
+.fairyTabsBox .formContent {position: relative}
+.fairyTabsBox .formContent > div[class*=box] {display: none;}
+.fairyTabsBox.hid .formContent > div[class*=box] {display: block;}
+
+.fairyTabsBox .formContent .boxMain {
+    margin-bottom: 70px;
+}
+.fairyTabsBox .formContent .boxMain p.title {
+    color: #fff;
+    font-size: 44px;
+    margin-bottom: 70px;
+}
+.fairyTabsBox .formContent .boxMain p.title span {
+    position: relative;
+}
+.fairyTabsBox .formContent .boxMain p.title span:after {
+    content: "";
+    width: 172px;
+    height: 25px;
+    top: 110%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background: transparent url("svg/bracket.svg") 0 0 no-repeat;
+    -webkit-background-size: 172px 25px;
+    background-size: 172px 25px;
+    position: absolute;
+}
+.fairyTabsBox .formContent .boxMain > section {margin-bottom: 33px}
+.fairyTabsBox .formContent .attachBox .boxMain > section,
+.fairyTabsBox .formContent .formatBox .boxMain > section {background-color: #fff}
+.fairyTabsBox .formContent .boxMain > section > p.custom-font {
+    color: #fad943;
+    font-size: 40px;
+    margin-bottom: 35px;
+}
+
+
+
+
+
+
+
+.fairyTabsBox form .personCarousel li {
+    max-width: 180px;
+    margin: 0 auto;
+    position: relative;
+}
+.fairyTabsBox form .personCarousel li input[type=radio]{
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+.fairyTabsBox form .personCarousel li label {
+    width: 180px;
+    height: 180px;
+    border-radius: 90px;
+    display: block;
+    cursor: pointer;
+    position: relative;
+    margin-bottom: 13px;
+}
+.fairyTabsBox form .personCarousel li label:before {
+    position: absolute;
+    content: "Выбрать";
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(33,62,164,0.7) url("svg/check_white.svg") center center no-repeat;
+    -webkit-background-size: 53px 53px;
+    background-size: 53px 53px;
+    color: #fff;
+    opacity: 0;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    padding-top: 122px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-weight: 500;
+}
+.fairyTabsBox form .personCarousel li label:after {
+    position: absolute;
+    content: "Выбрано";
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(250,217,67,0.8) url("svg/check_blue.svg") center center no-repeat;
+    -webkit-background-size: 53px 53px;
+    background-size: 53px 53px;
+    color: #2134a4;
+    opacity: 0;
+    padding-top: 122px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-weight: 500;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.fairyTabsBox form .personCarousel li input[type=radio]:checked ~ label:after {
+    opacity: 1;
+}
+.fairyTabsBox form .personCarousel li .name {
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 500;
+    display: inline-block;
+    margin-bottom: 6px;
+}
+.fairyTabsBox form .personCarousel li .book,
+.fairyTabsBox form .personCarousel li .painter {
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    padding-left: 24px;
+    text-align: left;
+    margin-bottom: 7px;
+}
+.boxMain .owl-theme .owl-controls .owl-buttons div {
+    position: absolute;
+
+}
+.boxMain .owl-theme .owl-controls {margin: 0}
+
+
+
+
+
+.formContent .moveTo ul li {
+    display: inline-block;
+    position: relative;
+    width: 200px;
+    height: 62px;
+    margin: 0 18px;
+    vertical-align: top;
+}
+.formContent .moveTo ul li:after,
+.formContent .moveTo ul li:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 62px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    -webkit-background-size: 200px 62px;
+    background-size: 200px 62px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.formContent .moveTo ul li:before {opacity: 0}
+.formContent .moveTo ul li:first-child:after {
+    background-image: url("svg/back_button_pas.svg");
+}
+.formContent .moveTo ul li:first-child:before {
+    background-image: url("svg/back_button_rol.svg");
+}
+.formContent .moveTo ul li:last-child:after {
+    background-image: url("svg/forward_button_pas.svg");
+}
+.formContent .moveTo ul li.submitBut:last-child:after {
+    background-image: url("svg/to_basket_button_pas.svg");
+}
+.formContent .moveTo ul li:last-child:before {
+    background-image: url("svg/forward_button_rol.svg");
+}
+.formContent .moveTo ul li.submitBut:last-child:before {
+    background-image: url("svg/to_basket_button_rol.svg");
+}
+.formContent .moveTo ul li label,
+.formContent .moveTo ul li button {
+    display: block;
+    position: relative;
+    color: #fff;
+    z-index: 1;
+    height: 62px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 40px;
+    cursor: pointer;
+}
+.formContent .moveTo ul li button {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    color: #2134a4;
+    width: 100%;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.formContent .moveTo ul li label span {
+    font-size: 36px;
+    line-height: 62px;
+    display: block;
+}
+.formContent .moveTo ul li:first-child span {text-align: right}
+.formContent .moveTo ul li:last-child span {text-align: left}
+
+
+.formatList {
+    padding: 47px;
+}
+.formatList li {
+    position: relative;
+    margin-bottom: 20px;
+}
+.formatList li:last-child {margin-bottom: 0}
+.formatList li input[type=radio],
+.formatList li input[type=checkbox] {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+.formatList .formatContainer {
+    min-height: 200px;
+    margin-bottom: 20px;
+}
+.formatList li:last-child .formatContainer {margin-bottom: 0}
+.formatList .formatContainer .formatPic {
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    float: left;
+    margin: 0;
+}
+.formatList .formatContainer .formatPic:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(250, 217, 67, 0.8) url("svg/check_blue.svg") no-repeat center center;
+    background-size: 53px 53px;
+    opacity: 0;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.fairyTabsBox .formContent .boxMain .formatList input[type=radio]:checked ~ .formatContainer .formatPic:before,
+.fairyTabsBox .formContent .boxMain .formatList input[type=checkbox]:checked ~ .formatContainer .formatPic:before {opacity: 1}
+.formatList .formatContainer .formatDescr {
+    padding: 18px 0 0 240px;
+    text-align: left;
+}
+.fairyTabsBox .formContent .boxMain .formatDescr p.title {
+    font-size: 20px;
+    color: #2134a4;
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+.fairyTabsBox .formContent .boxMain .formatDescr span {
+    font-size: 14px;
+    color: #000;
+    font-weight: 400;
+    display: block;
+    line-height: 21px;
+    margin-bottom: 16px;
+}
+.fairyTabsBox .formContent .boxMain .formatDescr .currentPrice {
+    font-size: 24px;
+    margin: 0 50px 0 0;
+    vertical-align: middle;
+}
+.fairyTabsBox .formContent .boxMain .formatDescr .currentPrice:after {
+    font-size: 14px;
+    line-height: 10px;
+}
+.fairyTabsBox .formContent .boxMain .formatDescr .classicButton {
+    color: #2134a4;
+    border-color: #2134a4;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    position: relative;
+}
+.fairyTabsBox .formContent .boxMain .formatDescr .classicButton:after {
+    content: attr(data-content);
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    color: #2134a4;
+    opacity: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 7px 0;
+    text-align: center;
+}
+.fairyTabsBox .formContent .boxMain .formatList input[type=radio]:checked ~ .formatContainer .formatDescr .classicButton,
+.fairyTabsBox .formContent .boxMain .formatList input[type=checkbox]:checked ~ .formatContainer .formatDescr .classicButton {
+    border-color: #fad943;
+    background-color: #fad943;
+    color: #fad943;
+}
+.fairyTabsBox .formContent .boxMain .formatList input[type=radio]:checked ~ .formatContainer .formatDescr .classicButton:after,
+.fairyTabsBox .formContent .boxMain .formatList input[type=checkbox]:checked ~ .formatContainer .formatDescr .classicButton:after {
+    opacity: 1;
+}
+
+.fairyTabsBox .formContent .adviceBox .boxMain {margin-bottom: 30px}
+.adviceBox .boxMain ul li {
+    float: left;
+    width: 33.33%;
+    position: relative;
+    height: 260px;
+    margin-bottom: 40px;
+}
+.adviceBox .boxMain ul li input[type=radio] {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+.adviceBox .boxMain ul li label {
+    display: block;
+    width: 260px;
+    height: 260px;
+    margin: 0 auto;
+    border-radius: 130px;
+    overflow: hidden;
+    background-color: #fff;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+}
+.adviceBox .boxMain ul li label:after {
+    background: url("svg/check_blue.svg") no-repeat center center rgba(250, 217, 67, 0.8);
+    -webkit-background-size: 53px 53px;
+    background-size: 53px 53px;
+    bottom: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #2134a4;
+    content: "Выбрано";
+    font-weight: 500;
+    left: 0;
+    opacity: 0;
+    padding-top: 165px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.adviceBox .boxMain ul li label:before {
+    background: url("svg/check_white.svg") no-repeat center center rgba(33, 62, 164, 0.7);
+    -webkit-background-size: 53px 53px;
+    background-size: 53px 53px;
+    bottom: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #ffffff;
+    content: "Выбрать";
+    font-weight: 500;
+    left: 0;
+    opacity: 0;
+    padding-top: 165px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.adviceBox .boxMain ul li input[type=radio]:checked ~ label:after {opacity: 1}
+.adviceBox .boxMain ul li label .fullContainer > div {display: table; width: 100%; height: 100%}
+.adviceBox .boxMain ul li label .fullContainer > div > div {display: table-cell; vertical-align: middle}
+.adviceBox .boxMain ul li label .fullContainer > div > div p {padding: 0 10px}
+.adviceBox .boxMain ul li label .currentPrice {
+    font-size: 24px;
+    color: #2134a4;
+    font-weight: 500;
+    position: absolute;
+    bottom: 40px;
+    text-align: center;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+    -moz-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -o-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+}
+.totalBox .customForms {text-align: left}
+.totalBox .customForms input,
+.totalBox .customForms textarea {border-color: #fff}
+.totalBox .aboutacceptor {
+    background-color: #b0bcff;
+    padding: 45px 60px 35px;
+    margin-bottom: 45px;
+}
+.totalBox .aboutacceptor:before {
+    content: "";
+    position: absolute;
+    width: 121px;
+    height: 163px;
+    bottom: 95%;
+    left: 10%;
+    background: transparent url("svg/sitting_owl.svg") 0 0 no-repeat;
+    -webkit-background-size: 121px 163px;
+    background-size: 121px 163px;
+    z-index: 4;
+}
+.totalFormMain {background-color: #ffdb46}
+.totalFormMain .postInfo {
+    margin: 0;
+    padding: 40px 50px;
+}
+.fairyTabsBox .formContent .boxMain .totalFormMain .postInfo p.title {
+    color: #2134a4;
+    margin-bottom: 40px;
+}
+.totalFormMain .postInfo .layout {
+    margin-bottom: 40px;
+}
+.totalFormMain .postInfo .layout > div {
+    float: left;
+    width: 50%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 20px;
+}
+.totalFormMain .postInfo .layout > div .img-box {
+    height: 300px;
+    border-radius: 10px;
+}
+.totalFormMain .postInfo ul {display: block}
+.totalFormMain .postInfo ul li {
+    display: block;
+    max-width: none;
+    border-bottom: 2px dotted #ffffff;
+    padding: 9px 0;
+}
+.totalFormMain .postInfo ul li.attachCell {display: none}
+.totalFormMain .postInfo ul li:first-child {border-top: 2px dotted #ffffff;}
+.totalFormMain .postInfo ul li p {
+    margin-bottom: 0;
+    padding: 6px 10px;
+}
+.totalFormMain .postInfo ul li strong {width: 40%}
+.totalFormMain .postInfo ul li span {color: #000; font-size: 18px}
+.totalFormMain .postInfo ul li strong,
+.totalFormMain .postInfo ul li span {display: inline-block; vertical-align: middle}
+.totalFormMain .postInfo .costCell {text-align: center}
+.totalFormMain .postInfo .costCell strong,
+.totalFormMain .postInfo .costCell span {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    color: #2134a4;
+}
+.totalFormMain .postInfo .costCell strong {
+    font-size: 24px;
+    margin-right: 15px;
+}
+.totalFormMain .postInfo .costCell .currentPrice {font-size: 30px}
+.totalFormMain .postInfo .costCell .currentPrice:after {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+
+.footer_tools .socials ul li a svg.svg-out {fill: #ebeefb}
+.footer_tools .socials ul li a svg.svg-in {fill: #fff}
