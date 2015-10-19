@@ -96,6 +96,59 @@
 //    }
     
     
+//  Disable the default WooCommerce stylesheet (CSS)
+//    add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
+    
+    //    ==================================================================
+        
+//  Remove each style one by one
+//    add_filter( 'woocommerce_enqueue_styles', 'jk_dequeue_styles' );
+//    function jk_dequeue_styles( $enqueue_styles ) {
+//            unset( $enqueue_styles['woocommerce-general'] );	// Remove the gloss
+//            unset( $enqueue_styles['woocommerce-layout'] );		// Remove the layout
+//            unset( $enqueue_styles['woocommerce-smallscreen'] );	// Remove the smallscreen optimisation
+//            return $enqueue_styles;
+//    }
+    // Or just remove them all in one line
+//    add_filter( 'woocommerce_enqueue_styles', '__return_false' );
+    
+//    ==================================================================
+    
+    
+    
+//  ADD Custom CSS
+    function jk_enqueue_woocommerce_css(){
+	wp_register_style( 'woocommerce', get_template_directory_uri() . '/woocommerce/css/woocommerce.css' );
+	if ( class_exists( 'woocommerce' ) ) {
+		wp_enqueue_style( 'woocommerce' );
+	}
+    }
+    add_action( 'wp_enqueue_scripts', 'jk_enqueue_woocommerce_css' );
+    
+    
+    
+    // Removes showing results in Storefront theme
+    remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
+//    remove_action( 'woocommerce_after_shop_loop', 'woocommerce_result_count', 20 );
+    
+//    ADD currency BYR
+    add_filter( 'woocommerce_currencies', 'add_my_currency' );
+    function add_my_currency( $currencies ) {
+        $currencies['ABC'] = __( __( 'Belorussian ruble', 'shkap' ), 'woocommerce' );
+        return $currencies;
+    }
+    add_filter('woocommerce_currency_symbol', 'add_my_currency_symbol', 10, 2);
+    
+    function add_my_currency_symbol( $currency_symbol, $currency ) {
+        switch( $currency ) {
+            case 'ABC': $currency_symbol = 'BYR'; 
+            break;
+        }
+        return $currency_symbol;
+    }
+
+//    =============================================================================================
+    
 /**
  * Customizer additions.
  *
