@@ -47,6 +47,28 @@ function shkap_customize_register( $wp_customize ) {
         'priority' => '2',
     ) );
     
+    /* Address */
+    $wp_customize->add_setting( 'shkap_main_address' ,
+        array('sanitize_callback' => 'shkap_sanitize_text', 'default' =>  'Брест, ул.Дзержинского, 63'));
+
+    $wp_customize->add_control( 'shkap_main_address', array(
+        'label'    => __( 'Address:', 'shkap' ),
+        'section'  => 'shkap_theme_setting',
+        'settings' => 'shkap_main_address',
+        'priority' => '3',
+    ) );
+    
+    /* Working time */
+    $wp_customize->add_setting( 'shkap_working_time' ,
+        array('sanitize_callback' => 'shkap_sanitize_text', 'default' =>  '9:00 &ndash; 17:30 пн &ndash; пт'));
+
+    $wp_customize->add_control( 'shkap_working_time', array(
+        'label'    => __( 'Working time:', 'shkap' ),
+        'section'  => 'shkap_theme_setting',
+        'settings' => 'shkap_working_time',
+        'priority' => '4',
+    ) );
+    
     /* Header - Logo */
     $wp_customize->add_setting( 'shkap_header_logo',
     array('sanitize_callback' => 'esc_url_raw', 'default' => get_template_directory_uri() .'/svg/logo_shkap.svg') );
@@ -54,7 +76,7 @@ function shkap_customize_register( $wp_customize ) {
                 'label'    => __( 'Logo:', 'shkap' ),
                 'section'  => 'shkap_theme_setting',
                 'settings' => 'shkap_header_logo',
-                'priority' => '3',
+                'priority' => '5',
             ) ) );
 
     

@@ -80,8 +80,12 @@
                             ?>
                         </p>
                         <ul>
-                            <li><span>Юр.адрес:</span><strong>Брест, ул.Дзержинского, 63</strong></li>
-                            <li><span>Время работы:</span><strong>9:00 &ndash; 17:30 пн &ndash; пт</strong></li>
+                            <li><span>Юр.адрес:</span><strong><?php if ( get_theme_mod( 'shkap_main_address','Брест, ул.Дзержинского, 63' ))
+                                    echo get_theme_mod( 'shkap_main_address','Брест, ул.Дзержинского, 63' ); ?></strong>
+                            </li>
+                            <li><span>Время работы:</span><strong><?php if ( get_theme_mod( 'shkap_working_time','9:00 &ndash; 17:30 пн &ndash; пт' ))
+                                    echo get_theme_mod( 'shkap_working_time','9:00 &ndash; 17:30 пн &ndash; пт' ); ?></strong>
+                            </li>
                         </ul>
                     </section>
                 </div>
